@@ -78637,7 +78637,7 @@ exports = module.exports = __webpack_require__(102)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.header[data-v-8d2039bc] {\n  background-color: #ddddff;\n  color: #fff;\n  height: 120px;\n  position: fixed;\n  width: 100%;\n  z-index: 1;\n}\n.side-menu-wrapper[data-v-8d2039bc] {\n  position: sticky;\n}\n.side-menu[data-v-8d2039bc] {\n  width: 100%;\n}\n.contents[data-v-8d2039bc] {\n  padding: 16px;\n}\n", ""]);
 
 // exports
 
@@ -79124,6 +79124,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 var Vue = __webpack_require__(3);
 /*
@@ -79186,15 +79190,22 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_scrollto___default.a);
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('main', [_vm._m(0), _vm._v(" "), _c('div', [_c('el-row', [_c('el-col', {
-    staticClass: "side-menu",
+  return _c('main', [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "main-contents",
+    style: ({
+      'padding-top': _vm.getSideMenuTop
+    })
+  }, [_c('el-row', [_c('el-col', {
+    staticClass: "side-menu-wrapper",
     style: ({
       top: _vm.getSideMenuTop
     }),
     attrs: {
-      "span": 6
+      "offset": 1,
+      "span": 5
     }
   }, [_c('el-menu', {
+    staticClass: "side-menu",
     attrs: {
       "mode": "vertical",
       "default-active": "0"
@@ -79222,7 +79233,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }))], 1), _vm._v(" "), _c('el-col', {
     staticClass: "contents",
     attrs: {
-      "span": 18
+      "offset": 1,
+      "span": 17
     }
   }, [_c('div', {
     attrs: {
@@ -79230,7 +79242,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('p', [_vm._v("CONTENTS 1")])]), _vm._v(" "), _c('div', {
     staticStyle: {
-      "height": "400px"
+      "height": "500px"
     }
   }), _vm._v(" "), _c('div', {
     attrs: {
@@ -79238,7 +79250,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('p', [_vm._v("CONTENTS 2")])]), _vm._v(" "), _c('div', {
     staticStyle: {
-      "height": "400px"
+      "height": "500px"
     }
   }), _vm._v(" "), _c('div', {
     attrs: {
@@ -79246,7 +79258,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('p', [_vm._v("CONTENTS 3")])]), _vm._v(" "), _c('div', {
     staticStyle: {
-      "height": "400px"
+      "height": "500px"
     }
   }), _vm._v(" "), _c('div', {
     attrs: {
@@ -79254,15 +79266,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('p', [_vm._v("CONTENTS 4")])]), _vm._v(" "), _c('div', {
     staticStyle: {
-      "height": "400px"
+      "height": "500px"
     }
   }), _vm._v(" "), _c('div', {
     staticStyle: {
-      "height": "400px"
+      "height": "500px"
     }
   })])], 1)], 1)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('header', [_c('h1', [_vm._v("Header")])])
+  return _c('header', {
+    staticClass: "header",
+    attrs: {
+      "id": "main-header"
+    }
+  }, [_c('h1', [_vm._v("Header")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

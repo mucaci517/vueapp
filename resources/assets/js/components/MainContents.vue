@@ -1,10 +1,13 @@
 <template>
   <main>
-    <header><h1>Header</h1></header>
-    <div>
+    <header id="main-header" class="header">
+      <h1>Header</h1>
+    </header>
+
+    <div class="main-contents" :style="{ 'padding-top': getSideMenuTop }">
       <el-row>
-        <el-col :span="6" class="side-menu" :style="{ top: getSideMenuTop }">
-           <el-menu mode="vertical" default-active="0">
+        <el-col :offset="1" :span="5" class="side-menu-wrapper" :style="{ top: getSideMenuTop }">
+           <el-menu mode="vertical" default-active="0" class="side-menu">
              <el-menu-item-group v-for="(group, index1) in groups"
                  :key="group.title" :title="group.title">
                <el-menu-item v-for="(item, index2) in group.items"
@@ -15,24 +18,25 @@
              </el-menu-item-group>
            </el-menu>
         </el-col>
-        <el-col :span="18" class="contents">
+
+        <el-col :offset="1" :span="17" class="contents">
           <div id="contents-1">
             <p>CONTENTS 1</p>
           </div>
-          <div style="height: 400px;"></div>
+          <div style="height: 500px;"></div>
           <div id="contents-2">
             <p>CONTENTS 2</p>
           </div>
-          <div style="height: 400px;"></div>
+          <div style="height: 500px;"></div>
           <div id="contents-3">
             <p>CONTENTS 3</p>
           </div>
-          <div style="height: 400px;"></div>
+          <div style="height: 500px;"></div>
           <div id="contents-4">
             <p>CONTENTS 4</p>
           </div>
-          <div style="height: 400px;"></div>
-          <div style="height: 400px;"></div>
+          <div style="height: 500px;"></div>
+          <div style="height: 500px;"></div>
         </el-col>
       </el-row>
     </div>
@@ -107,5 +111,26 @@ export default {
 
 <style lang="scss" scoped>
 @import "resources/assets/sass/variables";
+
+.header {
+  background-color: #ddddff;
+  color: #fff;
+  height: 120px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.side-menu-wrapper {
+  position: sticky;
+}
+
+.side-menu {
+  width: 100%;
+}
+
+.contents {
+  padding: 16px;
+}
 
 </style>
